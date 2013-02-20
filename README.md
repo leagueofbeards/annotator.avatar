@@ -9,3 +9,18 @@ Usage
 To enable Avatar, simply grab a copy of the plugin file, and add it to your app after you include Annotator. Initializing Avatar is as simple as:
 
     $(document.body).annotator().annotator('addPlugin', 'Avatar');
+    
+Prerequisites
+-----
+
+This plugin is meant for those of us who are running our own [Store], so don't expect this to work with the hosted version from Annotator.org. The plugin expects a couple of things to be present to work. The first is a globally accessible Javascript object, `LA`.
+
+    <script>
+	    if ( typeof(LA) == "undefined" ) { LA = {}; }
+    		LA.displayname = "yourname"; // set to the currentlu authed user
+    		LA.avatar = '<img src="path/to/avatar.png">'; // set to the currentlu authed user's avatar
+    </script>
+
+`LA` is is there for the initial creation of an annotation. When reloading the annotations, Avatar looks for `annotation.avatar` and `annotation.username` in the returned annotation object.
+
+[Store]: https://github.com/okfn/annotator/wiki/Storage
