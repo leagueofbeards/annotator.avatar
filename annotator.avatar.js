@@ -1,4 +1,4 @@
-Annotator.Plugin.Avatar = function (element, message) {
+Annotator.Plugin.Avatar = function () {
   var plugin = {};
 
 	plugin.pluginInit = function () {
